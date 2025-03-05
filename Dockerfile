@@ -3,6 +3,8 @@ FROM node:22-slim AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
+ENV NODE_ENV="production"
+
 RUN corepack enable
 
 COPY ./package.json ./pnpm-lock.yaml /app/
